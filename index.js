@@ -17,15 +17,4 @@
             }
         });
 
-        document.querySelector('#contact-form').addEventListener('submit', (event) => {
-            event.preventDefault();
-            const form = event.currentTarget;
-            const formData = new FormData(form);
-            const subject = `Portfolio message from ${formData.get('name')}`;
-            const body = `${formData.get('message')}\n\nFrom: ${formData.get('name')} (${formData.get('email')})`;
-            const emailLink = `mailto:ameesharnbht@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            document.querySelector('#form-note').textContent = 'Your email app should open with the message. Send it there to complete delivery.';
-            window.location.href = emailLink;
-        });
-
         document.querySelector('#year').textContent = new Date().getFullYear();

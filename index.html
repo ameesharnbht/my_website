@@ -101,14 +101,6 @@
                 </ul>
             </div>
         </section>
-
-            <div class="wrap">
-                <h2 id="cv-title">My CV</h2>
-                <p>View or download my CV as a PDF.</p>
-                <a class="button" href="cv.pdf" target="_blank" rel="noopener">View my CV (PDF)</a>
-            </div>
-        </section>
-
         <section class="contact" id="contact" aria-labelledby="contact-title">
             <div class="wrap contact-grid">
                 <div>
@@ -128,7 +120,7 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact-form" id="contact-form">
+                <form class="contact-form" id="contact-form" onsubmit="event.preventDefault(); const f = new FormData(this); const body = 'Name: ' + f.get('name') + '\nEmail: ' + f.get('email') + '\n\n' + f.get('message'); window.open('https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=' + encodeURIComponent('ameesharnbht@gmail.com') + '&amp;su=' + encodeURIComponent('Website contact from ' + f.get('name')) + '&amp;body=' + encodeURIComponent(body), '_blank', 'noopener,noreferrer');">
                     <div class="field-row">
                         <label for="name">Your name
                             <input id="name" name="name" type="text" autocomplete="name" placeholder="Name" required>
@@ -140,8 +132,8 @@
                     <label for="message">Message
                         <textarea id="message" name="message" placeholder="What would you like to talk about?" required></textarea>
                     </label>
-                    <button class="button" type="submit">Write an email <span class="button-arrow" aria-hidden="true">→</span></button>
-                    <p class="form-note" id="form-note">Your email app will open with your message ready to send.</p>
+                    <button class="button" type="submit">Open in Gmail <span class="button-arrow" aria-hidden="true">→</span></button>
+                    <p class="form-note" id="form-note">Gmail will open with your message ready to send. You can use Gmail on desktop or mobile.</p>
                 </form>
             </div>
         </section>
